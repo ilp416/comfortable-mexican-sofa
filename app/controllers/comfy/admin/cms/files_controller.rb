@@ -18,7 +18,7 @@ class Comfy::Admin::Cms::FilesController < Comfy::Admin::Cms::BaseController
 
     # Integration with Redactor 1.0 Wysiwyg
     when "redactor"
-      file_scope  = comfy_paginate(files_scope.order(:position), per_page: 100)
+      file_scope  = files_scope.order(:position)
       file_hashes =
         case params[:type]
         when "image"
